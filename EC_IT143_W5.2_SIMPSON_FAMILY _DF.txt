@@ -1,0 +1,58 @@
+/***********************************************************************************
+******************************
+NAME: My Script Family_data_simpsonFam
+PURPOSE: My script purpose...
+MODIFICATION LOG:
+Ver		 Date		Author			Description
+----- ---------- ----------- -------------------------------------------------------------
+1		10/14/2023	danielafindlay	Built this script for EC IT143
+-------------------------------------------------------------------------------
+RUNTIME:
+Xm Xs
+NOTES:
+This is where I talk about what this script is, why I built it, and other stuff...
+***********************************************************************************
+*******************************/
+
+--Q1:This is Marge Simpson, this morning I noticed that my husband left to work this morning, can I know what his status is?-BY ME
+--A:
+SELECT 
+	FIRST_NAME ,
+	LAST_NAME,
+	STATUS
+FROM FAMILY_DATA
+WHERE FIRST_NAME = 'Homer'
+
+--Q2:If my husband's job title is nuclear safety inspector, what is my job title?-BY ME
+--A2:
+SELECT 
+	NAME,
+	JOB_TITLE,
+	STATUS
+	FROM FAMILY_DATA
+WHERE NAME= 'MARGE SIMPSON';
+	
+--Q3:homer is been working for our company for a lot years now, but what is the exact hire date?-BY ME
+--A3:
+SELECT
+	NAME,
+	HIRE_DATE,
+	DEPARTMENT
+	FROM FAMILY_DATA
+WHERE FIRST_NAME ='HOMER';
+
+
+--Q4:In 1990, how much did Marge spend using her Planet Express Card?  
+--What was her largest purchase that month and what card did she use to pay for it?- STACEY SINGLETON
+--A4:
+
+Select  
+   SUM (Amount) AS Total
+  from Planet_Express
+  where card_member= 'marge simpson'
+  AND date ='1990';
+
+  --I am sorry, I tried joining this, but i could not figured it out in how to make it work, is there away I could get help with this one? 
+  --I'm delivering the only thing that i could make work, since i was not even able to dispkay marge's name in here. 
+
+ 
