@@ -1,0 +1,8 @@
+
+SELECT A.employee_id, A.employee_name, A.employee_salary
+	FROM(SELECT employee_id, 
+		employee_name, 
+		employee_salary,
+	DENSE_RANK() OVER (ORDER BY employee_salary DESC) AS RN
+	FROM employee_salary_record)AS A
+WHERE RN <= 3

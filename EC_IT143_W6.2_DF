@@ -1,0 +1,66 @@
+/*****************************************************************************************************************
+NAME:    My Script Name AdventuresWorks2022
+PURPOSE: My script purpose...W3 school- questions activity
+
+MODIFICATION LOG:
+Ver      Date        Author        Description
+-----   ----------   -----------   -------------------------------------------------------------------------------
+1.0     09/28/2023  DanielaFindlay  1. Built this script for EC IT43
+
+
+RUNTIME: 
+Xm Xs
+
+NOTES: 
+This Script is part of IT143 activity 3.4 questions and answers..
+ 
+******************************************************************************************************************/
+
+-- Q1: I am interested in in productid 998, what is the list price? BY ME, DANIELA FINDLAY
+-- A1:find productid 998 and its list price by searching in the product list history
+SELECT (998) [ProductID]
+      ,[ListPrice]
+  FROM [AdventureWorks2022].[Production].[ProductListPriceHistory]
+
+
+-- Q2: How many categories are produced by adventure works? BY ME, DANIELA FINDLAY
+-- A2:for this we will select all in the databasa and make a count to find a total of categories.
+USE AdventureWorks2022
+select count (*) from Production.ProductCategory
+
+-- Q3: I am interested in our sales product. What is the most expensive sales product we’ve sold and where did we sell it to?  (Sales.SalesOrderDetail) BY TALAFUA SEUMANU
+-- A3:Organize the the max price itemas by city according to where they sold most (Qty)
+SELECT MAX(UnitPrice)
+FROM SALES.SalesOrderDetail
+GROUP BY OrderQty
+ORDER BY CITY
+
+-- Q4: What is AdventureWorks highest-selling road bike of all time? BY NATHAN WHITE
+-- A4:find the max specialty sold in the sales history.
+select MAX (specialty)
+from sales.vStoreWithDemographics
+
+-- Q5: I am curious about a particular vendor that we use. What is the name of the vendor with a business entity ID of 1588 and what was their average lead time? BY RACHAEL BURDETT
+-- A5:USE AdventureWorks2022
+SELECT * FROM person.BusinessEntity
+WHERE Person.BusinessEntity.BusinessEntityID = '1588';
+
+
+-- Q6: What is the cheapest product offered?.BY GAVIN VAN COTT
+-- A6:
+select MIN(listprice)
+from Production.Product
+group by (Name);
+
+-- Q7: Can you make a list of tables in AdventureWorks that contain a column called BusinessEntityID? BY JEDDY SHEBER
+-- A7:
+SELECT ID, businessentityID
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'BusinessEntityID' ;
+
+-- Q8:Find the columns of the "Person.Address" table along with their data types.BY FRANK 
+--A8:
+SELECT COLUMN_NAME, DATA_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Address' AND TABLE_SCHEMA = 'Person';
+

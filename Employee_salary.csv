@@ -1,0 +1,10 @@
+﻿ employee_salary table,,,
+employee_id,employee_name,department_id,employee_salary
+1,Rowan Shepherd,1,1000
+2,Rimsha Melendez,1,900
+3,Tiah Sanford,1,900
+4,Cayden Mcclure,1,700
+5,Ellena Dyer,2,1200
+6,Marcus Knox,2,800
+7,Tashan Dalby,2,700
+8,Arif Sutherland,2,500
